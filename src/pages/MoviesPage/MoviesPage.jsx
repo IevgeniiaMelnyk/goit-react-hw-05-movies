@@ -1,5 +1,4 @@
 import Section from 'shared/components/Section/Section';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MoviesPage = () => {
