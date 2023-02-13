@@ -33,7 +33,7 @@ const MoviesDetailsPage = () => {
       }
     };
     fetchDetails();
-  }, []);
+  }, [movieId]);
 
   return (
     <Section>
