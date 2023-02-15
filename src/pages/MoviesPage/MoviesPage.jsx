@@ -39,20 +39,23 @@ const MoviesPage = () => {
     fetchMovies();
   }, [page, search]);
 
-  const onSearchMovies = useCallback(({ search }) => {
-    setSearchParams({ search, page: 1 });
-    setItems([]);
-  }, []);
+  const onSearchMovies = useCallback(
+    ({ search }) => {
+      setSearchParams({ search, page: 1 });
+      setItems([]);
+    },
+    [setSearchParams]
+  );
 
   const nextPage = useCallback(() => {
     if (page > 0) {
       setSearchParams({ search, page: Number(page) + 1 });
     }
-  });
+  }, [setSearchParams]);
 
   const previousPage = useCallback(() => {
     setSearchParams({ search, page: Number(page) - 1 });
-  });
+  }, [setSearchParams]);
 
   return (
     <Section>

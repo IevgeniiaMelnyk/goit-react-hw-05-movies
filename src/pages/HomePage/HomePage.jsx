@@ -32,13 +32,13 @@ const HomePage = () => {
 
   const nextPage = useCallback(() => {
     setSearchParams({ page: Number(page) + 1 });
-  });
+  }, [setSearchParams]);
 
   const previousPage = useCallback(() => {
     if (page > 1) {
       setSearchParams({ page: Number(page) - 1 });
     }
-  });
+  }, setSearchParams);
 
   return (
     <Section>
