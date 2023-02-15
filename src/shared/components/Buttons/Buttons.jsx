@@ -11,18 +11,19 @@ const Buttons = ({ page, previousPage, nextPage }) => {
         <button className={scss.button} type="button" onClick={previousPage}>
           <IconContext.Provider
             value={{
-              style: { width: '20px', height: '20px', fill: 'blue' },
+              style: { width: '20px', height: '20px', fill: '#3498db' },
             }}
           >
             <AiOutlineArrowLeft />
           </IconContext.Provider>
         </button>
       )}
-      <p className={scss.text}>{page}</p>
+
+      {<p className={scss.text}>{page}</p>}
       <button className={scss.button} type="button" onClick={nextPage}>
         <IconContext.Provider
           value={{
-            style: { width: '20px', height: '20px', fill: 'blue' },
+            style: { width: '20px', height: '20px', fill: '#3498db' },
           }}
         >
           <AiOutlineArrowRight />
@@ -35,7 +36,7 @@ const Buttons = ({ page, previousPage, nextPage }) => {
 export default Buttons;
 
 Buttons.propTypes = {
-  page: PropTypes.number.isRequired,
+  page: PropTypes.string.isRequired,
   previousPage: PropTypes.func.isRequired,
   nextPage: PropTypes.func.isRequired,
 };

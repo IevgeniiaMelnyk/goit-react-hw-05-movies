@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Outlet, Link } from 'react-router-dom';
 import { baseImgUrl } from 'shared/services/film-app';
 import scss from './MovieData.module.scss';
 
@@ -26,22 +25,6 @@ const MovieData = ({ url, tag, title, score, overview, genres, date }) => {
           </ul>
         </div>
       </div>
-      <div className={scss.line}></div>
-      <h3 className={scss.secondTitle}>Additional information</h3>
-      <ul className={scss.listLink}>
-        <li className={scss.item}>
-          <Link className={scss.itemLink} to="cast">
-            Cast
-          </Link>
-        </li>
-        <li className={scss.item}>
-          <Link className={scss.itemLink} to="reviews">
-            Reviews
-          </Link>
-        </li>
-      </ul>
-      <Outlet />
-      <div className={scss.line}></div>
     </>
   );
 };

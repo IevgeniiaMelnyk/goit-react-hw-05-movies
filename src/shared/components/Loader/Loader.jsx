@@ -5,7 +5,7 @@ const Loader = () => {
   return (
     <div className={scss.box}>
       <RotatingLines
-        strokeColor="red"
+        strokeColor="#3498db"
         strokeWidth="5"
         animationDuration="0.75"
         width="96"

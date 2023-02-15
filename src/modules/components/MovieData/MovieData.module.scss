@@ -36,22 +36,3 @@
   margin-bottom: 20px;
   margin-top: 20px;
 }
-
-.listLink {
-  padding-top: 20px;
-}
-
-.item {
-  color: blue;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.itemLink {
-  text-decoration: none;
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}

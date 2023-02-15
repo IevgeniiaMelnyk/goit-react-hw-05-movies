@@ -12,13 +12,13 @@
   display: inline-block;
   font-size: 20px;
   margin-right: 20px;
-  color: black;
+  color: #3498db;
   font-weight: 600;
   text-decoration: none;
 }
 
 .link:global(.active) {
   font-weight: 800;
-  color: blue;
+  color: #3498db;
   text-decoration: underline;
 }

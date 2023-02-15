@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Section from 'shared/components/Section/Section';
@@ -11,7 +12,8 @@ import scss from './homePage.module.scss';
 const HomePage = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams({ page: 1 });
+  const page = searchParams.get('page');
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -19,8 +21,8 @@ const HomePage = () => {
         setLoading(true);
         const data = await getMoviesPopular(page);
         setItems(data.results);
-      } catch (error) {
-        toast.error(error.message);
+      } catch ({ response }) {
+        toast.error(response.data.message);
       } finally {
         setLoading(false);
       }
@@ -28,15 +30,15 @@ const HomePage = () => {
     fetchMovies();
   }, [page]);
 
-  const nextPage = () => {
-    setPage(prevPage => prevPage + 1);
-  };
+  const nextPage = useCallback(() => {
+    setSearchParams({ page: Number(page) + 1 });
+  });
 
-  const previousPage = () => {
+  const previousPage = useCallback(() => {
     if (page > 1) {
-      setPage(prevPage => prevPage - 1);
+      setSearchParams({ page: Number(page) - 1 });
     }
-  };
+  });
 
   return (
     <Section>
