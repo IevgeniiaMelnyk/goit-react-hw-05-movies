@@ -51,11 +51,11 @@ const MoviesPage = () => {
     if (page > 0) {
       setSearchParams({ search, page: Number(page) + 1 });
     }
-  }, [setSearchParams]);
+  }, [search, page, setSearchParams]);
 
   const previousPage = useCallback(() => {
     setSearchParams({ search, page: Number(page) - 1 });
-  }, [setSearchParams]);
+  }, [search, page, setSearchParams]);
 
   return (
     <Section>

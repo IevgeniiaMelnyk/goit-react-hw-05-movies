@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, memo } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoSearch } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
@@ -16,7 +16,6 @@ const MoviesSearchForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
     if (search === '') {
       toast.info('Enter a search term.');
       return;
